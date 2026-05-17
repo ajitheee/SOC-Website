@@ -63,6 +63,36 @@ const teamData = [
     teamYear: 2026,
     category: "Micro Intern",
   },
+  {
+    name: "Alexander Chacon",
+    year: "Undergrad",
+    program: "Computer Information Systems",
+    role: "Micro Intern",
+    description:
+      "Computer Information Systems student at Cal Poly Pomona interested in Information Technology/Cybersecurity.",
+    picture: "/assets/2026-team/alexander_chacon.jpg",
+    media: {
+      linkedin: "https://www.linkedin.com/in/alexmchacon/",
+    },
+    group: "SOC",
+    teamYear: 2026,
+    category: "Micro Intern",
+  },
+  {
+    name: "Tyler Fuentes",
+    year: "Undergrad",
+    program: "Computer Information Systems",
+    role: "Micro Intern",
+    description:
+      "Computer Information Systems student at Cal Poly Pomona interested in Information Technology/Cybersecurity.",
+    picture: "/assets/stockavatar.jpg",
+    media: {
+      linkedin: "https://www.linkedin.com/in/tylerfuentes/",
+    },
+    group: "SOC",
+    teamYear: 2026,
+    category: "Micro Intern",
+  },
   // Hill Family Fellows (2025, 2024, etc.)
   {
     name: "Roman Arreguin",
