@@ -1,0 +1,29 @@
+export const links = [
+  {
+    name: "Daily Sign-in",
+    url: "https://forms.office.com/r/y6zQAtF9wx",
+    qr: "/assets/links/qrforsoc.png",
+  },
+  {
+    name: "{New} User Access Request Portal",
+    url: "https://portal.calpolysoc.org/",
+    qr: "/assets/links/qrforuar.png",
+  },
+  {
+    name: "Discord",
+    url: "https://discord.gg/PGJs8GHQcK",
+    qr: "/assets/links/qrfordisc.png",
+  },
+  /*
+  {
+    name: "Placeholder 1",
+    url: "#",
+    qr: "/assets/qr/placeholder1.png",
+  },
+  {
+    name: "Placeholder 2",
+    url: "#",
+    qr: "/assets/qr/placeholder2.png",
+  },
+  */
+];

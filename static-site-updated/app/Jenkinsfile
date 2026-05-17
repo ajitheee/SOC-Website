@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_TAG      = "static-site:latest"
+        CONTAINER_NAME = "static-site"
+    }
+
+    triggers {
+        githubPush()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build image on host Docker') {
+            steps {
+                sh """
+                cd app
+                docker build --no-cache -t ${IMAGE_TAG} -f Dockerfile .
+                """
+            }
+        }
+
+        stage('Stop and remove old container') {
+            steps {
+                sh """
+                docker stop ${CONTAINER_NAME} || true
+                docker rm ${CONTAINER_NAME} || true
+                """
+            }
+        }
+
+        stage('Start new container') {
+            steps {
+                sh """
+                docker run -d \
+                  --name ${CONTAINER_NAME} \
+                  -p 3000:3000 \
+                  ${IMAGE_TAG}
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Deploy succeeded. ${IMAGE_TAG} rebuilt and ${CONTAINER_NAME} restarted."
+        }
+        failure {
+            echo "❌ Deploy failed. Check logs."
+        }
+    }
+}
